@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -25,10 +25,11 @@
     "@angular/router": "~9.0.0-rc.7",
     "bootstrap": "4.3.1",
     "ngx-bootstrap": "^5.2.0",
+    "nodemon": "^2.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "typescript": "~3.6.4"
+    "typescript": "~3.6.4",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.0-rc.7",
