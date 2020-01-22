@@ -1,9 +1,25 @@
-<div class="row">
-  <div class="col-md-2">
-    <rout-navigation></rout-navigation>
-  </div>
-  <div class="col-md-10">
-    <p>Router works!</p>
-    <!-- <router-outlet></router-outlet> -->
-  </div>
-</div>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+    <div class="row">
+      <div class="col-md-3">
+        <rout-navigation></rout-navigation>
+      </div>
+      <div class="col-md-9">
+        <p>Router works!</p>
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+    </div>
+    
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
