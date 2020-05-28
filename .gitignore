@@ -44,3 +44,13 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+build/3rdpartylicenses.txt
+build/favicon.ico
+build/index.html
+build/main-es5.23583be1490b69bc8d74.js
+build/main-es2015.23583be1490b69bc8d74.js
+build/polyfills-es5.fff98669e9d96cc8f205.js
+build/polyfills-es2015.25ff13674b3056b14f77.js
+build/runtime-es5.edb2fcf2778e7bf1d426.js
+build/runtime-es2015.edb2fcf2778e7bf1d426.js
+build/styles.88ad6c9e299a67b07f37.css
