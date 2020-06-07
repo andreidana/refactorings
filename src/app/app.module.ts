@@ -22,19 +22,23 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { NbThemeModule, NbLayoutModule, NbMenuModule, NbIconModule } from '@nebular/theme';
+import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 
 import { NavigationComponent } from './navigation/navigation.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MarkdownModule.forRoot(),
     AccordionModule.forRoot(),
     AlertModule.forRoot(),
     ButtonsModule.forRoot(),
