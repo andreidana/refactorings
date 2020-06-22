@@ -27,18 +27,22 @@ import { MarkdownModule, MarkdownService } from 'ngx-markdown';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ContentComponent } from './content/content.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    ContentComponent
+    ContentComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MarkdownModule.forRoot(),
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient }),
     AccordionModule.forRoot(),
     AlertModule.forRoot(),
     ButtonsModule.forRoot(),

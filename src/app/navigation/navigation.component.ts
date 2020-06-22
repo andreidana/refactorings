@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem } from '@nebular/theme';
+import { NbMenuItem, NbMenuService } from '@nebular/theme';
 
 @Component({
   selector: 'rout-navigation',
@@ -9,128 +9,54 @@ import { NbMenuItem } from '@nebular/theme';
 export class NavigationComponent implements OnInit {
   menuItems: NbMenuItem[] = [
     {
-      title: 'Home',
+      title: 'HOME',
       icon: 'home-outline',
-      // link: '/pages/dashboard',
       home: true,
     },
     {
       title: 'DESIGN PATTERNS',
       icon: 'folder-outline',
-      // link: '/pages/ui-features',
       children: [
-        {
+        { 
           title: 'Creational',
           icon: 'layers-outline',
-          // link: '/pages/ui-features/buttons',
           children: [
-            {
-              title: 'Abstract Factory',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Builder',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Factory Method',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Prototype',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Singleton',
-              icon: 'file-outline'
-            },
+            { title: 'Abstract Factory', icon: 'file-outline', link: 'pattern' },
+            { title: 'Builder', icon: 'file-outline', link: 'builder' },
+            { title: 'Factory Method', icon: 'file-outline' },
+            { title: 'Prototype', icon: 'file-outline' },
+            { title: 'Singleton', icon: 'file-outline' },
           ]
         },
         {
           title: 'Structural',
           icon: 'layers-outline',
           children: [
-            {
-              title: 'Adapter',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Bridge',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Composite',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Decorator',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Facade',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Flyweight',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Proxy',
-              icon: 'file-outline'
-            },
+            { title: 'Adapter', icon: 'file-outline' },
+            { title: 'Bridge', icon: 'file-outline' },
+            { title: 'Composite', icon: 'file-outline' },
+            { title: 'Decorator', icon: 'file-outline' },
+            { title: 'Facade', icon: 'file-outline' },
+            { title: 'Flyweight', icon: 'file-outline' },
+            { title: 'Proxy', icon: 'file-outline' }
           ]
-          // link: '/pages/ui-features/grid',
         },
         {
           title: 'Behavioral',
           icon: 'layers-outline',
           children: [
-            {
-              title: 'Chain of Responsibility',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Command',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Interpreter',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Iterator',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Mediator',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Memento',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Observer',
-              icon: 'file-outline'
-            },
-            {
-              title: 'State',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Strategy',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Template Method',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Visitor',
-              icon: 'file-outline'
-            },
+            { title: 'Chain of Responsibility', icon: 'file-outline' },
+            { title: 'Command', icon: 'file-outline' },
+            { title: 'Interpreter', icon: 'file-outline' },
+            { title: 'Iterator', icon: 'file-outline' },
+            { title: 'Mediator', icon: 'file-outline' },
+            { title: 'Memento', icon: 'file-outline' },
+            { title: 'Observer', icon: 'file-outline' },
+            { title: 'State', icon: 'file-outline' },
+            { title: 'Strategy', icon: 'file-outline' },
+            { title: 'Template Method', icon: 'file-outline' },
+            { title: 'Visitor', icon: 'file-outline' },
           ]
-          // link: '/pages/ui-features/icons',
         }
       ],
     },
@@ -142,42 +68,15 @@ export class NavigationComponent implements OnInit {
           title: 'Composing Methods',
           icon: 'layers-outline',
           children: [
-            {
-              title: 'Extract Method',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Inline Method',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Inline Temp',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Replace Temp with Query',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Introduce Explaining Variable',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Split Temporary Variable',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Remove Assignments to Parameters',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Replace Method with Method Object',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Substitute Algorithm',
-              icon: 'file-outline'
-            }
+            { title: 'Extract Method', icon: 'file-outline' },
+            { title: 'Inline Method', icon: 'file-outline' },
+            { title: 'Inline Temp', icon: 'file-outline' },
+            { title: 'Replace Temp with Query', icon: 'file-outline' },
+            { title: 'Introduce Explaining Variable', icon: 'file-outline' },
+            { title: 'Split Temporary Variable', icon: 'file-outline' },
+            { title: 'Remove Assignments to Parameters', icon: 'file-outline' },
+            { title: 'Replace Method with Method Object', icon: 'file-outline' },
+            { title: 'Substitute Algorithm', icon: 'file-outline' }
           ]
         },
         {
@@ -450,22 +349,10 @@ export class NavigationComponent implements OnInit {
           title: 'Big Refactorings',
           icon: 'layers-outline',
           children: [
-            {
-              title: 'Tease Apart Inheritance',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Convert Procedural Design to Objects',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Separate Domain from Presentation',
-              icon: 'file-outline'
-            },
-            {
-              title: 'Extract Hierarchy',
-              icon: 'file-outline'
-            }
+            { title: 'Tease Apart Inheritance', icon: 'file-outline' },
+            { title: 'Convert Procedural Design to Objects', icon: 'file-outline' },
+            { title: 'Separate Domain from Presentation', icon: 'file-outline' },
+            { title: 'Extract Hierarchy', icon: 'file-outline' }
           ]
         }
       ]
@@ -893,10 +780,14 @@ export class NavigationComponent implements OnInit {
     }
   ];
 
-
-  constructor() { }
+  constructor(menu: NbMenuService) {
+    menu.onItemClick().subscribe((data) => {
+      console.log(data.item);
+    });
+  }
 
   ngOnInit() {
+    
   }
 
 }
