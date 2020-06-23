@@ -5,8 +5,8 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
-  { path: 'pattern', component: ContentComponent },
-  { path: '', component: HomeComponent }
+  { path: 'designPatterns', children: [{ path: '**', component: ContentComponent }] },
+  { path: '', pathMatch: 'full', component: HomeComponent }
 ];
 
 @NgModule({

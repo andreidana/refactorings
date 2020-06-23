@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NbMenuItem, NbMenuService } from '@nebular/theme';
+import { NbMenuItem } from '@nebular/theme';
 
 @Component({
   selector: 'rout-navigation',
@@ -11,6 +11,7 @@ export class NavigationComponent implements OnInit {
     {
       title: 'HOME',
       icon: 'home-outline',
+      link: '/',
       home: true,
     },
     {
@@ -21,11 +22,11 @@ export class NavigationComponent implements OnInit {
           title: 'Creational',
           icon: 'layers-outline',
           children: [
-            { title: 'Abstract Factory', icon: 'file-outline', link: 'pattern' },
-            { title: 'Builder', icon: 'file-outline', link: 'builder' },
-            { title: 'Factory Method', icon: 'file-outline' },
-            { title: 'Prototype', icon: 'file-outline' },
-            { title: 'Singleton', icon: 'file-outline' },
+            { title: 'Abstract Factory', icon: 'file-outline', link: 'designPatterns/creational/abstractFactory' },
+            { title: 'Builder', icon: 'file-outline', link: 'designPatterns/creational/builder' },
+            { title: 'Factory Method', icon: 'file-outline', link: 'designPatterns/creational/factoryMethod' },
+            { title: 'Prototype', icon: 'file-outline', link: 'designPatterns/creational/prototype' },
+            { title: 'Singleton', icon: 'file-outline', link: 'designPatterns/creational/singleton' },
           ]
         },
         {
@@ -780,11 +781,7 @@ export class NavigationComponent implements OnInit {
     }
   ];
 
-  constructor(menu: NbMenuService) {
-    menu.onItemClick().subscribe((data) => {
-      console.log(data.item);
-    });
-  }
+  constructor() { }
 
   ngOnInit() {
     
