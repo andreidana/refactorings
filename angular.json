@@ -27,6 +27,9 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/designPatterns/creational/abstractFactory.md",
+              "src/assets/designPatterns/creational/factoryMethod.md",
+              "src/assets/designPatterns/creational/singleton.md",
+              "src/assets/designPatterns/creational/prototype.md",
               "src/assets/designPatterns/creational/builder.md"
             ],
             "styles": [

@@ -89,22 +89,20 @@ class AppComponent {
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["rout-root"]], decls: 9, vars: 0, consts: [["fixed", ""], [1, "row"], [1, "col-md-3"], [1, "col-md-9"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["rout-root"]], decls: 7, vars: 0, consts: [[1, "row"], [1, "col-md-3"], [1, "col-md-9"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nb-layout");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "nb-layout-header", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "nb-layout-column");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "nb-layout-column");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "rout-navigation");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "rout-navigation");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "router-outlet");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "nb-layout-footer", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutComponent"], _nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutHeaderComponent"], _nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutColumnComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__["NavigationComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"], _nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutFooterComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2FzcyJ9 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutComponent"], _nebular_theme__WEBPACK_IMPORTED_MODULE_1__["NbLayoutColumnComponent"], _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_2__["NavigationComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2FzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -313,15 +311,16 @@ class ContentComponent {
     constructor(markdownService, route) {
         this.markdownService = markdownService;
         this.route = route;
-        this.filePath = 'assets/';
     }
     ngOnInit() {
+        this.filePath = 'assets/';
         this.route.parent.url.subscribe(parentUrlList => {
             this.filePath += parentUrlList.join('/');
             this.filePath += '/';
             this.route.url.subscribe(urlList => this.filePath += urlList.join('/'));
             this.filePath += '.md';
         });
+        console.log('path', this.filePath);
         this.markdownService.compile('');
     }
 }
@@ -423,30 +422,30 @@ class NavigationComponent {
                         title: 'Structural',
                         icon: 'layers-outline',
                         children: [
-                            { title: 'Adapter', icon: 'file-outline' },
-                            { title: 'Bridge', icon: 'file-outline' },
-                            { title: 'Composite', icon: 'file-outline' },
-                            { title: 'Decorator', icon: 'file-outline' },
-                            { title: 'Facade', icon: 'file-outline' },
-                            { title: 'Flyweight', icon: 'file-outline' },
-                            { title: 'Proxy', icon: 'file-outline' }
+                            { title: 'Adapter', icon: 'file-outline', link: 'designPatterns/structural/adapter' },
+                            { title: 'Bridge', icon: 'file-outline', link: 'designPatterns/structural/bridge' },
+                            { title: 'Composite', icon: 'file-outline', link: 'designPatterns/structural/composite' },
+                            { title: 'Decorator', icon: 'file-outline', link: 'designPatterns/structural/decorator' },
+                            { title: 'Facade', icon: 'file-outline', link: 'designPatterns/structural/facade' },
+                            { title: 'Flyweight', icon: 'file-outline', link: 'designPatterns/structural/flyweight' },
+                            { title: 'Proxy', icon: 'file-outline', link: 'designPatterns/structural/proxy' }
                         ]
                     },
                     {
                         title: 'Behavioral',
                         icon: 'layers-outline',
                         children: [
-                            { title: 'Chain of Responsibility', icon: 'file-outline' },
-                            { title: 'Command', icon: 'file-outline' },
-                            { title: 'Interpreter', icon: 'file-outline' },
-                            { title: 'Iterator', icon: 'file-outline' },
-                            { title: 'Mediator', icon: 'file-outline' },
-                            { title: 'Memento', icon: 'file-outline' },
-                            { title: 'Observer', icon: 'file-outline' },
-                            { title: 'State', icon: 'file-outline' },
-                            { title: 'Strategy', icon: 'file-outline' },
-                            { title: 'Template Method', icon: 'file-outline' },
-                            { title: 'Visitor', icon: 'file-outline' },
+                            { title: 'Chain of Responsibility', icon: 'file-outline', link: 'designPatterns/behavioral/chainOfResponsibility' },
+                            { title: 'Command', icon: 'file-outline', link: 'designPatterns/behavioral/command' },
+                            { title: 'Interpreter', icon: 'file-outline', link: 'designPatterns/behavioral/interpreter' },
+                            { title: 'Iterator', icon: 'file-outline', link: 'designPatterns/behavioral/iterator' },
+                            { title: 'Mediator', icon: 'file-outline', link: 'designPatterns/behavioral/mediator' },
+                            { title: 'Memento', icon: 'file-outline', link: 'designPatterns/behavioral/memento' },
+                            { title: 'Observer', icon: 'file-outline', link: 'designPatterns/behavioral/observer' },
+                            { title: 'State', icon: 'file-outline', link: 'designPatterns/behavioral/state' },
+                            { title: 'Strategy', icon: 'file-outline', link: 'designPatterns/behavioral/strategy' },
+                            { title: 'Template Method', icon: 'file-outline', link: 'designPatterns/behavioral/templateMethod' },
+                            { title: 'Visitor', icon: 'file-outline', link: 'designPatterns/behavioral/visitor' },
                         ]
                     }
                 ],

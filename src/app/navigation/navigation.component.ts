@@ -33,30 +33,30 @@ export class NavigationComponent implements OnInit {
           title: 'Structural',
           icon: 'layers-outline',
           children: [
-            { title: 'Adapter', icon: 'file-outline' },
-            { title: 'Bridge', icon: 'file-outline' },
-            { title: 'Composite', icon: 'file-outline' },
-            { title: 'Decorator', icon: 'file-outline' },
-            { title: 'Facade', icon: 'file-outline' },
-            { title: 'Flyweight', icon: 'file-outline' },
-            { title: 'Proxy', icon: 'file-outline' }
+            { title: 'Adapter', icon: 'file-outline', link: 'designPatterns/structural/adapter' },
+            { title: 'Bridge', icon: 'file-outline', link: 'designPatterns/structural/bridge' },
+            { title: 'Composite', icon: 'file-outline', link: 'designPatterns/structural/composite' },
+            { title: 'Decorator', icon: 'file-outline', link: 'designPatterns/structural/decorator' },
+            { title: 'Facade', icon: 'file-outline', link: 'designPatterns/structural/facade' },
+            { title: 'Flyweight', icon: 'file-outline', link: 'designPatterns/structural/flyweight' },
+            { title: 'Proxy', icon: 'file-outline', link: 'designPatterns/structural/proxy' }
           ]
         },
         {
           title: 'Behavioral',
           icon: 'layers-outline',
           children: [
-            { title: 'Chain of Responsibility', icon: 'file-outline' },
-            { title: 'Command', icon: 'file-outline' },
-            { title: 'Interpreter', icon: 'file-outline' },
-            { title: 'Iterator', icon: 'file-outline' },
-            { title: 'Mediator', icon: 'file-outline' },
-            { title: 'Memento', icon: 'file-outline' },
-            { title: 'Observer', icon: 'file-outline' },
-            { title: 'State', icon: 'file-outline' },
-            { title: 'Strategy', icon: 'file-outline' },
-            { title: 'Template Method', icon: 'file-outline' },
-            { title: 'Visitor', icon: 'file-outline' },
+            { title: 'Chain of Responsibility', icon: 'file-outline', link: 'designPatterns/behavioral/chainOfResponsibility' },
+            { title: 'Command', icon: 'file-outline', link: 'designPatterns/behavioral/command' },
+            { title: 'Interpreter', icon: 'file-outline', link: 'designPatterns/behavioral/interpreter' },
+            { title: 'Iterator', icon: 'file-outline', link: 'designPatterns/behavioral/iterator' },
+            { title: 'Mediator', icon: 'file-outline', link: 'designPatterns/behavioral/mediator' },
+            { title: 'Memento', icon: 'file-outline', link: 'designPatterns/behavioral/memento' },
+            { title: 'Observer', icon: 'file-outline', link: 'designPatterns/behavioral/observer' },
+            { title: 'State', icon: 'file-outline', link: 'designPatterns/behavioral/state' },
+            { title: 'Strategy', icon: 'file-outline', link: 'designPatterns/behavioral/strategy' },
+            { title: 'Template Method', icon: 'file-outline', link: 'designPatterns/behavioral/templateMethod' },
+            { title: 'Visitor', icon: 'file-outline', link: 'designPatterns/behavioral/visitor' },
           ]
         }
       ],
