@@ -503,21 +503,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var ngx_markdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ngx-markdown */
-    "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
     /* harmony import */
 
 
     var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var ngx_markdown__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ngx-markdown */
+    "./node_modules/ngx-markdown/__ivy_ngcc__/fesm2015/ngx-markdown.js");
 
     var ContentComponent = /*#__PURE__*/function () {
-      function ContentComponent(markdownService, route) {
+      function ContentComponent(markdownService, router, route) {
         _classCallCheck(this, ContentComponent);
 
         this.markdownService = markdownService;
+        this.router = router;
         this.route = route;
       }
 
@@ -526,18 +533,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           var _this = this;
 
-          this.filePath = 'assets/';
-          this.route.parent.url.subscribe(function (parentUrlList) {
-            _this.filePath += parentUrlList.join('/');
-            _this.filePath += '/';
-
-            _this.route.url.subscribe(function (urlList) {
-              return _this.filePath += urlList.join('/');
-            });
-
-            _this.filePath += '.md';
+          this.filePath = "assets".concat(this.router.url, ".md");
+          this.router.events.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["filter"])(function (event) {
+            return event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationStart"];
+          })).subscribe(function (event) {
+            return _this.filePath = "assets".concat(event.url, ".md");
           });
-          console.log('path', this.filePath);
           this.markdownService.compile('');
         }
       }]);
@@ -546,7 +547,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     ContentComponent.ɵfac = function ContentComponent_Factory(t) {
-      return new (t || ContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_markdown__WEBPACK_IMPORTED_MODULE_1__["MarkdownService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]));
+      return new (t || ContentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_markdown__WEBPACK_IMPORTED_MODULE_3__["MarkdownService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]));
     };
 
     ContentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -564,7 +565,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.filePath);
         }
       },
-      directives: [ngx_markdown__WEBPACK_IMPORTED_MODULE_1__["MarkdownComponent"]],
+      directives: [ngx_markdown__WEBPACK_IMPORTED_MODULE_3__["MarkdownComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbnRlbnQvY29udGVudC5jb21wb25lbnQuc2FzcyJ9 */"]
     });
     /*@__PURE__*/
@@ -579,7 +580,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [{
-          type: ngx_markdown__WEBPACK_IMPORTED_MODULE_1__["MarkdownService"]
+          type: ngx_markdown__WEBPACK_IMPORTED_MODULE_3__["MarkdownService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }];
