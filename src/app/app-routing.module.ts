@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'designPatterns', children: [{ path: '**', component: ContentComponent }] },
+  { path: 'refactorings', children: [{ path: '**', component: ContentComponent }] },
   { path: '', pathMatch: 'full', component: HomeComponent }
 ];
 

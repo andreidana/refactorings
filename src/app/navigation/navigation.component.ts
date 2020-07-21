@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
       title: 'DESIGN PATTERNS',
       icon: 'folder-outline',
       children: [
-        { 
+        {
           title: 'Creational',
           icon: 'layers-outline',
           children: [
@@ -69,7 +69,7 @@ export class NavigationComponent implements OnInit {
           title: 'Composing Methods',
           icon: 'layers-outline',
           children: [
-            { title: 'Extract Method', icon: 'file-outline' },
+            { title: 'Extract Method', icon: 'file-outline', link: 'refactorings/composingMethods/extractMethod' },
             { title: 'Inline Method', icon: 'file-outline' },
             { title: 'Inline Temp', icon: 'file-outline' },
             { title: 'Replace Temp with Query', icon: 'file-outline' },
@@ -784,7 +784,7 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }
