@@ -826,7 +826,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             icon: 'layers-outline',
             children: [{
               title: 'Extract Method',
-              icon: 'file-outline'
+              icon: 'file-outline',
+              link: 'refactorings/composingMethods/extractMethod'
             }, {
               title: 'Inline Method',
               icon: 'file-outline'

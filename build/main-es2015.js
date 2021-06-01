@@ -457,7 +457,7 @@ class NavigationComponent {
                         title: 'Composing Methods',
                         icon: 'layers-outline',
                         children: [
-                            { title: 'Extract Method', icon: 'file-outline' },
+                            { title: 'Extract Method', icon: 'file-outline', link: 'refactorings/composingMethods/extractMethod' },
                             { title: 'Inline Method', icon: 'file-outline' },
                             { title: 'Inline Temp', icon: 'file-outline' },
                             { title: 'Replace Temp with Query', icon: 'file-outline' },

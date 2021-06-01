@@ -29,13 +29,15 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ContentComponent } from './content/content.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     ContentComponent,
-    HomeComponent
+    HomeComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
